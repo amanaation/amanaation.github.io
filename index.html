@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+  <meta charset="utf-8">
+	<title>AMANATION</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="/static/css/base.css">
+   <link rel="stylesheet" href="/static/css/main.css">
+   <link rel="stylesheet" href="/static/css/vendor.css">
+
+   <!-- script
+   ================================================== -->
+	<script src="/static/js/modernizr.js"></script>
+	<script src="/static/js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="/static/image/png" href="/static/favicon.png">
+
+</head>
+
+<body id="top">
+
+	<!-- header
+   ================================================== -->
+   <header>
+   	<div class="row">
+
+   		<div class="top-bar">
+   			<a class="menu-toggle" href="/static/#"><span>Menu</span></a>
+
+        <div class="logo">
+		         <a href="index.html"><img src="/static/images/logo3_crop2.png" alt="Profile Picture"></a>
+		      </div>
+
+		   	<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll"  href="/static/#intro" title="">Home</a></li>
+						<li><a class="smoothscroll"  href="/static/#about" title="">About</a></li>
+						<li><a class="smoothscroll"  href="/static/#resume" title="">Resume</a></li>
+						<li><a class="smoothscroll"  href="/static/#services" title="">Projects</a></li>
+						<li><a class="smoothscroll"  href="/static/#contact" title="">Contact</a></li>
+					</ul>
+				</nav>
+   		</div> <!-- /top-bar -->
+
+   	</div> <!-- /row -->
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro">
+
+   	<div class="intro-overlay"></div>
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+
+	   			<h5>Hello, World.</h5>
+	   			<h1>I'm Aman Mishra.</h1>
+
+	   			<p class="intro-position">
+	   				<span>Python Developer</span>
+	   				<span>Free Lance Full Stack Developer</span>
+            <span>Data Sciecne Enthusiast</span>
+	   			</p>
+
+	   			<a class="button stroke smoothscroll" href="/static/#about" title="">More About Me</a>
+
+	   		</div>
+
+   		</div>
+   	</div> <!-- /intro-content -->
+
+   	<ul class="intro-social">
+      <li><a href="https://linkedin.com/in/aman-mishra-72208414b/"><i class="fa fa-linkedin"></i></a></li>
+      <li><a href="https://github.com/amanaation"><i class="fa fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/amanmax345/"><i class="fa fa-instagram"></i></a></li>
+      </ul> <!-- /intro-social -->
+
+   </section> <!-- /intro -->
+
+   	<!-- services Section
+      ================================================== -->
+   	<section id="services">
+
+   		<div class="overlay"></div>
+
+   		<div class="row section-intro">
+      		<div class="col-twelve">
+
+      			<h5>PROJECTS</h5>
+      			<h1>CHECK OUT SOME OF MY WORK</h1>
+
+      			<h3><p style="color:White">Following are some of my personal projects. Be sure to check them out. Click on the  project to know more.</p></h3>
+
+      		</div>
+      	</div> <!-- /section-intro -->
+
+      	<div class="row services-content">
+
+      		<div id="owl-slider" class="owl-carousel services-list">
+
+           {% for project in project_details %}
+           <a href = "{{project.url}}">
+   	      	<div class="service">
+
+   	      		<span class="icon"><i class="icon-hand"></i></span>
+
+   	            <div class="service-content">
+
+   	            	<h2 style="color:White">{{project.project_title}}</h2>
+
+   		            <p class="desc">{{ project.description }}	         		</p>
+
+   	         	</div>
+
+   				</div> <!-- /service --></a>
+           {% endfor %}
+
+
+   	      </div> <!-- /services-list -->
+
+      	</div> <!-- /services-content -->
+
+   	</section> <!-- /services -->
+
+
+
+   <!-- about section
+   ================================================== -->
+   <section id="about">
+
+   	<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>About</h5>
+   			<h1>Let me introduce myself.</h1>
+
+   			<div class="intro-info">
+
+   				<img src="/static/images/profile-pic.png" alt="Profile Picture">
+
+   				<p class="lead" style="color:black">I'm a Python developer with skilled in various programming languages including Java, C# and database technologies like NoSQL and MySQL.</p>
+   			</div>
+
+   		</div>
+   	</div> <!-- /section-intro -->
+
+   	<div class="row about-content">
+
+   		<div class="col-six tab-full">
+
+   			<h3>Profile</h3>
+   			<p style="color:black">Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
+
+        {% for detail in details %}
+   			<ul class="info-list">
+   				<li>
+   					<strong >{{detail.title}}:</strong>
+   					<span style="color:black">{{detail.value}}</span>
+   				</li>
+   			</ul> <!-- /info-list -->
+        {% endfor %}
+   		</div>
+
+   		<div class="col-six tab-full">
+
+   			<h3>Skills</h3>
+   			<p style="color:black">Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
+        {% for data in expertise_data %}
+				<ul >
+				   <li>
+				   	<p><strong>{{data.skill}}</strong><p>
+				   </li>
+				</ul> <!-- /skill-bars -->
+        {% endfor %}
+   		</div>
+
+   	</div>
+
+   	<div class="row button-section">
+   		<div class="col-twelve">
+   			<a href="/static/resume.pdf" title="Download CV" class="button button-primary" download="Aman_Mishra_Resume">Download CV</a>
+   		</div>
+   	</div>
+
+   </section> <!-- /process-->
+
+
+   <!-- resume Section
+   ================================================== -->
+	<section id="resume" class="grey-section">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h5>Resume</h5>
+   			<h1>More of my credentials.</h1>
+
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+
+   		</div>
+   	</div> <!-- /section-intro-->
+
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Work Experience</h2>
+
+   		</div> <!-- /resume-header -->
+
+      {% for experience in work_experience %}
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+
+   				<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-briefcase"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h2>{{ experience.designation}}</h2>
+	   					<p style="color:black"><h4>{{experience.start_date}} - {{experience.end_date}}</h4></p>
+	   				</div>
+
+	   				<div class="timeline-content" style="color:black">
+	   					<h2>{{experience.company_name}}</h2>
+              <ul>
+              {% for details in experience.description_to_list %}
+              <li>
+	   					     {{ details }}
+              </li>
+              {% endfor %}
+            </ul>
+	   				</div>
+
+	   			</div> <!-- /timeline-block -->
+
+
+   			</div> <!-- /timeline-wrap -->
+
+   		</div> <!-- /col-twelve -->
+      {% endfor %}
+   	</div> <!-- /resume-timeline -->
+
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Education</h2>
+
+   		</div> <!-- /resume-header -->
+
+      {% for education in education_details %}
+   		<div class="col-twelve">
+
+   			<div class="timeline-wrap">
+
+   				<div class="timeline-block">
+
+	   				<div class="timeline-ico">
+	   					<i class="fa fa-graduation-cap"></i>
+	   				</div>
+
+	   				<div class="timeline-header">
+	   					<h2>{{ education.qualification }}</h2>
+	   					<p><h4>{{ education.start_date}} - {{ education.end_date }}</h4></p>
+	   				</div>
+
+	   				<div class="timeline-content">
+	   					<h2>{{ education.college_name }}</h2>
+	   				</div>
+
+
+	   			</div> <!-- /timeline-block -->
+
+   			</div> <!-- /timeline-wrap -->
+
+   		</div> <!-- /col-twelve -->
+      {% endfor %}
+   	</div> <!-- /resume-timeline -->
+
+	</section> <!-- /features -->
+
+
+
+
+
+   <!-- footer
+   ================================================== -->
+
+   <footer>
+     	<div class="row">
+
+     		<div class="col-six tab-full pull-right social">
+
+     			<ul class="footer-social">
+			      <li><a href="https://linkedin.com/in/aman-mishra-72208414b/"><i class="fa fa-linkedin"></i></a></li>
+			      <li><a href="https://github.com/amanaation"><i class="fa fa-github"></i></a></li>
+			      <li><a href="https://www.instagram.com/amanmax345/"><i class="fa fa-instagram"></i></a></li>
+			   </ul>
+
+	      </div>
+
+      	<div class="col-six tab-full">
+	      	<div class="copyright">
+		        	<span>© Amanation 2020.</span>
+		         </div>
+	      	</div>
+
+	      	<div id="go-top">
+		         <a class="smoothscroll" title="Back to Top" href="/static/#top"><i class="fa fa-long-arrow-up"></i></a>
+		      </div>
+
+      	</div> <!-- /row -->
+   </footer>
+
+   <div id="preloader">
+    	<div id="loader"></div>
+   </div>
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="/static/js/jquery-2.1.3.min.js"></script>
+   <script src="/static/js/plugins.js"></script>
+   <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
